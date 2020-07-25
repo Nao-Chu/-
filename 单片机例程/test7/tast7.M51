@@ -1,0 +1,274 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/01/2020  04:31:09  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE STARTUP.obj, tast7.obj TO tast7 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  tast7.obj (TAST7)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  tast7 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0005H     UNIT         ?DT?TAST7
+            IDATA   000DH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     00B9H     UNIT         ?PR?DATAPROS?TAST7
+            CODE    00BCH     0055H     UNIT         ?C?LIB_CODE
+            CODE    0111H     003DH     UNIT         ?PR?DIGDISPLAY?TAST7
+            CODE    014EH     0024H     UNIT         ?PR?SPI_READ?TAST7
+            CODE    0172H     001CH     UNIT         ?PR?_SPI_WRITE?TAST7
+            CODE    018EH     0019H     UNIT         ?PR?_READ_AD_DATA?TAST7
+            CODE    01A7H     000CH     UNIT         ?C_C51STARTUP
+            CODE    01B3H     000AH     UNIT         ?CO?TAST7
+            CODE    01BDH     0008H     UNIT         ?PR?MAIN?TAST7
+            CODE    01C5H     0007H     UNIT         ?PR?_DELAY?TAST7
+
+
+
+OVERLAY MAP OF MODULE:   tast7 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TAST7
+
+?PR?MAIN?TAST7
+  +--> ?PR?DATAPROS?TAST7
+  +--> ?PR?DIGDISPLAY?TAST7
+
+?PR?DATAPROS?TAST7
+  +--> ?PR?_READ_AD_DATA?TAST7
+  +--> ?CO?TAST7
+
+?PR?_READ_AD_DATA?TAST7
+  +--> ?PR?_SPI_WRITE?TAST7
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/01/2020  04:31:09  PAGE 2
+
+
+  +--> ?PR?SPI_READ?TAST7
+
+?PR?DIGDISPLAY?TAST7
+  +--> ?PR?_DELAY?TAST7
+
+
+
+SYMBOL TABLE OF MODULE:  tast7 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:01A7H         SEGMENT       ?C_C51STARTUP
+  I:000DH         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:01AAH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:01A7H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:01A7H         LINE#         133
+  C:01A9H         LINE#         134
+  C:01AAH         LINE#         135
+  C:01ABH         LINE#         136
+  C:01ADH         LINE#         185
+  C:01B0H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        TAST7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:01C5H         PUBLIC        _delay
+  B:00B0H.5       PUBLIC        CS
+  D:00B8H         PUBLIC        IP
+  C:01BDH         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/01/2020  04:31:09  PAGE 3
+
+
+  D:0009H         PUBLIC        disp
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00B0H.7       PUBLIC        DOUT
+  C:018EH         PUBLIC        _Read_AD_Data
+  C:014EH         PUBLIC        SPI_Read
+  B:00B0H.6       PUBLIC        CLK
+  C:0172H         PUBLIC        _SPI_Write
+  B:00B0H.4       PUBLIC        DIN
+  B:00A0H.2       PUBLIC        LSA
+  B:00A0H.3       PUBLIC        LSB
+  B:00A0H.4       PUBLIC        LSC
+  C:0003H         PUBLIC        datapros
+  D:00C8H         PUBLIC        T2CON
+  C:0111H         PUBLIC        DigDisplay
+  C:01B3H         PUBLIC        smgduan
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        x
+  C:01C5H         LINE#         19
+  C:01C5H         LINE#         20
+  C:01C5H         LINE#         21
+  C:01CBH         LINE#         22
+  -------         ENDPROC       _DELAY
+  -------         PROC          _SPI_WRITE
+  D:0007H         SYMBOL        dat
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0172H         LINE#         24
+  C:0172H         LINE#         25
+  C:0172H         LINE#         27
+  C:0174H         LINE#         28
+  C:0176H         LINE#         29
+  C:0176H         LINE#         30
+  C:0181H         LINE#         31
+  C:0185H         LINE#         32
+  C:0187H         LINE#         33
+  C:0189H         LINE#         34
+  C:018DH         LINE#         35
+  -------         ENDPROC       _SPI_WRITE
+  -------         PROC          SPI_READ
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0006H         SYMBOL        dat
+  -------         ENDDO         
+  C:014EH         LINE#         37
+  C:014EH         LINE#         38
+  C:014EH         LINE#         39
+  C:0151H         LINE#         40
+  C:0153H         LINE#         41
+  C:0155H         LINE#         42
+  C:0155H         LINE#         43
+  C:015CH         LINE#         44
+  C:015EH         LINE#         45
+  C:0160H         LINE#         46
+  C:0166H         LINE#         47
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/01/2020  04:31:09  PAGE 4
+
+
+  C:0171H         LINE#         48
+  C:0171H         LINE#         49
+  -------         ENDPROC       SPI_READ
+  -------         PROC          _READ_AD_DATA
+  D:0007H         SYMBOL        cmd
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        AD_Value
+  -------         ENDDO         
+  C:018EH         LINE#         51
+  C:018EH         LINE#         52
+  C:018EH         LINE#         55
+  C:0190H         LINE#         56
+  C:0192H         LINE#         57
+  C:0195H         LINE#         58
+  C:0199H         LINE#         59
+  C:019BH         LINE#         60
+  C:019CH         LINE#         61
+  C:019DH         LINE#         62
+  C:019FH         LINE#         63
+  C:01A0H         LINE#         64
+  C:01A1H         LINE#         65
+  C:01A4H         LINE#         66
+  C:01A6H         LINE#         67
+  C:01A6H         LINE#         68
+  -------         ENDPROC       _READ_AD_DATA
+  -------         PROC          DATAPROS
+  -------         DO            
+  D:0002H         SYMBOL        temp
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         70
+  C:0003H         LINE#         71
+  C:0003H         LINE#         74
+  C:0008H         LINE#         75
+  C:0008H         LINE#         76
+  C:000BH         LINE#         77
+  C:0014H         LINE#         78
+  C:0014H         LINE#         79
+  C:0016H         LINE#         80
+  C:002FH         LINE#         81
+  C:0055H         LINE#         82
+  C:0088H         LINE#         83
+  C:00BBH         LINE#         84
+  -------         ENDPROC       DATAPROS
+  -------         PROC          DIGDISPLAY
+  -------         DO            
+  D:0005H         SYMBOL        i
+  -------         ENDDO         
+  C:0111H         LINE#         86
+  C:0111H         LINE#         87
+  C:0111H         LINE#         89
+  C:0113H         LINE#         90
+  C:0113H         LINE#         91
+  C:0121H         LINE#         92
+  C:0121H         LINE#         93
+  C:0121H         LINE#         94
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/01/2020  04:31:09  PAGE 5
+
+
+  C:0125H         LINE#         95
+  C:0125H         LINE#         96
+  C:012DH         LINE#         97
+  C:012DH         LINE#         98
+  C:0131H         LINE#         99
+  C:0131H         LINE#         100
+  C:0137H         LINE#         101
+  C:0137H         LINE#         102
+  C:0141H         LINE#         103
+  C:0146H         LINE#         104
+  C:0149H         LINE#         105
+  C:014DH         LINE#         106
+  -------         ENDPROC       DIGDISPLAY
+  -------         PROC          MAIN
+  C:01BDH         LINE#         108
+  C:01BDH         LINE#         109
+  C:01BDH         LINE#         110
+  C:01BDH         LINE#         111
+  C:01BDH         LINE#         112
+  C:01C0H         LINE#         113
+  C:01C3H         LINE#         114
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TAST7
+
+  -------         MODULE        ?C?UIDIV
+  C:00BCH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+Program Size: data=14.0 xdata=0 code=460
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

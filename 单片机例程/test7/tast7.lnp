@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"tast7.obj" 
+TO "tast7" 
+RAMSIZE(256) 
