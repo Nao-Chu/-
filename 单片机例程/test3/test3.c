@@ -1,0 +1,64 @@
+#include <reg52.h>
+
+typedef unsigned int uint;
+sbit led1=P2^0; 
+sbit led2=P2^1;
+sbit led3=P2^2;
+sbit led4=P2^3;
+sbit k1 = P3^1;
+sbit k2 = P3^0;
+sbit k3 = P3^2;
+sbit k4 = P3^3;
+void delay(uint x)
+{
+	while(x--);
+}
+void keypros()
+{
+	if(k1 ==0)
+	{
+		delay(1000);
+		if(k1 ==0)
+		{
+			led1=~led1;
+		}
+		while(!k1);
+	}
+
+	if(k2 ==0)
+	{
+		delay(1000);
+		if(k2 ==0)
+		{
+			led2=~led2;
+		}
+		while(!k2);
+	}
+
+	if(k3 ==0)
+	{
+		delay(1000);
+		if(k3 ==0)
+		{
+			led3=~led3;
+		}
+		while(!k3);
+	}
+
+	if(k4 ==0)
+	{
+		delay(1000);
+		if(k4 ==0)
+		{
+			led4=~led4;
+		}
+		while(!k4);
+	}
+}
+int main()
+{
+	while(1)
+	{
+		keypros();
+	}
+} 
