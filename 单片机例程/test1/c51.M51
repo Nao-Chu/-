@@ -1,0 +1,140 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        05/23/2020  10:31:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE c51.obj TO c51 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  c51.obj (C51)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  c51 (C51)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?C51
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0066H     UNIT         ?PR?MAIN?C51
+            CODE    0069H     001DH     UNIT         ?PR?DELAY?C51
+            CODE    0086H     0018H     UNIT         ?PR?_MY_CROL_?C51
+            CODE    009EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   c51 (C51)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?C51
+
+?PR?MAIN?C51
+  +--> ?PR?DELAY?C51
+
+
+
+SYMBOL TABLE OF MODULE:  c51 (C51)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        C51
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  C:0069H         PUBLIC        delay
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2020  10:31:58  PAGE 2
+
+
+  D:00B8H         PUBLIC        IP
+  B:0090H.5       PUBLIC        beep
+  C:0003H         PUBLIC        main
+  D:0008H         PUBLIC        LEFT
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:0086H         PUBLIC        _my_crol_
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:0003H         LINE#         9
+  C:0003H         LINE#         10
+  C:0003H         LINE#         12
+  C:0006H         LINE#         13
+  C:000CH         LINE#         14
+  C:000CH         LINE#         15
+  C:000CH         LINE#         16
+  C:000FH         LINE#         18
+  C:0015H         LINE#         19
+  C:0015H         LINE#         20
+  C:001DH         LINE#         21
+  C:001FH         LINE#         22
+  C:0027H         LINE#         23
+  C:0027H         LINE#         25
+  C:0032H         LINE#         26
+  C:0032H         LINE#         27
+  C:0035H         LINE#         28
+  C:003AH         LINE#         29
+  C:0040H         LINE#         30
+  C:0047H         LINE#         31
+  C:004AH         LINE#         32
+  C:0050H         LINE#         33
+  C:0056H         LINE#         34
+  C:0056H         LINE#         36
+  C:0061H         LINE#         37
+  C:0063H         LINE#         38
+  C:0065H         LINE#         39
+  C:0065H         LINE#         40
+  C:0067H         LINE#         41
+  C:0067H         LINE#         43
+  -------         ENDPROC       MAIN
+  -------         PROC          DELAY
+  -------         DO            
+  D:0006H         SYMBOL        x
+  D:0004H         SYMBOL        y
+  -------         ENDDO         
+  C:0069H         LINE#         47
+  C:0069H         LINE#         48
+  C:0069H         LINE#         50
+  C:006CH         LINE#         51
+  C:0085H         LINE#         52
+  -------         ENDPROC       DELAY
+  -------         PROC          _MY_CROL_
+  D:0007H         SYMBOL        P
+  D:0004H         SYMBOL        i
+  C:0086H         LINE#         54
+  C:0086H         LINE#         55
+BL51 BANKED LINKER/LOCATER V6.22                                                      05/23/2020  10:31:58  PAGE 3
+
+
+  C:0086H         LINE#         56
+  C:0095H         LINE#         57
+  C:0098H         LINE#         58
+  C:0098H         LINE#         59
+  C:009BH         LINE#         60
+  C:009DH         LINE#         61
+  C:009DH         LINE#         62
+  C:009DH         LINE#         63
+  -------         ENDPROC       _MY_CROL_
+  -------         ENDMOD        C51
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MY_CROL_?C51
+
+Program Size: data=11.0 xdata=0 code=170
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
